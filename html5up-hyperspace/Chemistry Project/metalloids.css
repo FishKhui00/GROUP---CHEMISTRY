@@ -1,0 +1,1280 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Dosis';
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, 
+    #000,     /* Color 1 (Black) */
+    #003366,  /* Color 2 (Dark Blue) */
+    #000,     /* Color 3 (Black) */
+    #003366   /* Color 4 (Dark Blue) */
+    
+    );
+    background-size: 400% 400%;
+    animation: movingBackground 7s ease infinite;
+    position: relative; /* Position the logo relative to the body */
+}
+
+
+/* Style for the logo */
+#logo {
+    position: absolute; /* Position the logo absolutely within the body */
+    top: 60px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    z-index: 1; /* Ensure the logo is above the background */
+    width: 100px;
+}
+
+@keyframes movingBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 70px);
+
+    grid-template-rows: repeat(7, 70px);
+
+    grid-gap: 4px;
+
+    margin: auto;
+    max-width: 900px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.periodic-element {
+    padding: 4.5px;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    transition: all 0.2s ease;
+    
+
+}
+
+.periodic-element .periodic-element-inner {
+    background: #182733;
+    padding: 10px 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 20px);
+    transition: inherit;
+}
+
+.periodic-element .title-box {
+    font: 700 20px/1.3px sans-serif;
+    margin-top: 15px;
+    margin-left: 0.2px;
+
+}
+
+.periodic-element .description {
+    font: 500 9px sans-serif;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.periodic-element:after {
+    z-index: 10;
+    content: attr(data-description);
+    background-color: #f9f8f7;
+    color: #000000;
+    width:fit-content;
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+
+    transition: opacity 0.3s ease 0.3s, top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    font-size: 9px;
+    line-height:15px;
+    padding: 120px 50px 20px 50px;
+    margin: 0px 0px 0px -19px;
+    border-radius: 20px;
+    text-align:center;
+    
+    
+}
+
+.periodic-element:hover:after {
+    top: 120%;
+    left: 10px;
+    opacity: 1;
+}
+
+.periodic-element:hover {
+    transform: scale(2.12);
+    z-index: 10;
+}
+
+.periodic-element:hover .periodic-element-inner {
+    background: transparent;
+}
+
+.periodic-element:hover .title-box,
+.periodic-element:hover .description,
+.periodic-element:hover .atomic-number {
+    -webkit-text-fill-color: #222;
+}
+
+.periodic-element .title-box,
+.periodic-element-inner .description {
+    -webkit-text-fill-color: #fff7f7b1;
+}
+
+
+
+.alkali-metals {
+    background: linear-gradient(to bottom right, rgb(126, 232, 129) 0%, #ffffff 100%);
+    opacity: 0.1;
+}
+
+.Metalloids {
+    background: linear-gradient(to bottom right, rgb(124, 100, 39) 0%, #ffffff 100%);
+    opacity: 1;
+}
+
+.Actinides {
+    background: linear-gradient(to bottom right, rgb(154, 104, 28) 0%, rgb(209, 201, 170)100%);
+    opacity: 0.1;
+}
+
+.alkaline-earth-metals {
+    background: linear-gradient(to bottom right, rgb(189, 41, 51) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.Unknown-properties {
+    background: linear-gradient(to bottom right, rgb(126, 189, 208) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.reactive-non-metals {
+    background: linear-gradient(to bottom right, rgb(0, 0, 0) 0%, rgb(255, 253, 247)100%) !important;
+    opacity: 0.1;
+}
+
+.reactive-non-metals:hover {
+    background: linear-gradient(to bottom right, rgb(58, 46, 172) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.Transition-metals {
+    background: linear-gradient(to bottom right, rgb(104, 52, 172) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.Noble-gases {
+    background: linear-gradient(to bottom right, rgb(178, 56, 143) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.Post-transition {
+    background: linear-gradient(to bottom right, rgb(25, 109, 7) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.Lanthanides {
+    background: linear-gradient(to bottom right, rgb(7, 63, 114) 0%, rgb(255, 253, 247)100%);
+    opacity: 0.1;
+}
+
+.empty-box-1 {
+    grid-column: 2/span 16;
+    grid-row: 1
+}
+
+.empty-box-2 {
+    grid-column: 3/span 10;
+    grid-row: 2
+}
+
+.empty-box-3 {
+    grid-column: 3/span 10;
+    grid-row: 3
+}
+
+.empty-box-4 {
+    grid-column: 3/span 1;
+    grid-row: 6
+}
+
+.empty-box-5 {
+    grid-column: 3/span 1;
+    grid-row: 7
+}
+
+.empty-box-6 {
+    grid-column: 1/span 3;
+    grid-row: 1
+}
+
+.empty-box-7 {
+    grid-column: 1/span 3;
+    grid-row: 2
+}
+
+.atomic-number {
+    left: 0;
+    top: 0;
+    color: white;
+    position: absolute;
+    font-size: 13px !important;
+    margin-top: 10px !important;
+    margin-left: 3px !important;
+    z-index: 50;
+    text-indent: 2.5px;
+    letter-spacing: -1px;
+}
+
+.periodic-element-inner {
+    text-align: center;
+}
+
+.center {
+    margin-left: -7px !important;
+}
+
+.center2 {
+    margin-left: -10px !important;
+}
+
+.center3 {
+    margin-left: -14px !important;
+}
+
+.first-div {
+    margin-bottom: 80px;
+}
+
+.header {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 25px;
+
+}
+
+li {
+    margin-right: 20px;
+    color: #fff;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    padding: 9px;
+    margin-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+    margin: auto;
+    font-size: x-large;
+
+}
+
+a:hover {
+    border-bottom: 1.5px solid white;
+
+}
+
+a.current {
+    border-bottom: 1.5px solid rgb(245, 83, 24);
+}
+
+.header ul ul {
+    display: none;
+    position: absolute;
+    list-style: none;
+    right: -10px;
+
+}
+
+.header ul li:hover>ul {
+    display: block;
+    background: #333;
+
+}
+
+.header ul ul {
+    padding: 10px;
+}
+
+.header ul ul li {
+
+    padding: 10px;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+.Hydrogen:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/1920px-Hydrogen_discharge_tube.jpg');
+    background-size: 200px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Helium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/1920px-Helium_discharge_tube.jpg');
+    background-size: 170px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Lithium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Limetal.JPG/1280px-Limetal.JPG');
+    background-size: 150px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Beryllium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0c/Be-140g.jpg');
+    background-size: 150px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Boron:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Boron_R105.jpg');
+    background-size: 150px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Carbon:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f0/Graphite-and-diamond-with-scale.jpg');
+    background-size: 150px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Nitrogen:after {
+    background-image: url('https://static.wikia.nocookie.net/allbirdsoftheworld/images/2/2d/Nitrogen-glow.jpg/revision/latest/scale-to-width-down/1000?cb=20120509083829');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Oxygen:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Oxygen_discharge_tube.jpg/2880px-Oxygen_discharge_tube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Fluorine:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3c/Fluorite-270246.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Neon:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Neon_discharge_tube.jpg/2880px-Neon_discharge_tube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Sodium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Na_%28Sodium%29.jpg/2560px-Na_%28Sodium%29.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Magnesium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5c/CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Aluminium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5d/Aluminium-4.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Silicon:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e9/SiliconCroda.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Phosporus:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a7/Phosphor-rot-violett.jpg');
+    background-size: 250px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Sulfur:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Sulfur_-_El_Desierto_mine%2C_San_Pablo_de_Napa%2C_Daniel_Campos_Province%2C_Potos%C3%AD%2C_Bolivia.jpg/2560px-Sulfur_-_El_Desierto_mine%2C_San_Pablo_de_Napa%2C_Daniel_Campos_Province%2C_Potos%C3%AD%2C_Bolivia.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Chlorine:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Chlorine_liquid_in_an_ampoule.jpg/1920px-Chlorine_liquid_in_an_ampoule.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Argon:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Argon_discharge_tube.jpg/2880px-Argon_discharge_tube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Potassiun:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Potassium-2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Calcium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/96/Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Scandium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Scandium_sublimed_dendritic_and_1cm3_cube.jpg/2880px-Scandium_sublimed_dendritic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Titanium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Titan-crystal_bar.JPG/2880px-Titan-crystal_bar.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Vanadium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vanadium_crystal_bar_and_1cm3_cube.jpg/2560px-Vanadium_crystal_bar_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Titanium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Titan-crystal_bar.JPG/2880px-Titan-crystal_bar.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Chromium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chromium_crystals_and_1cm3_cube.jpg/2880px-Chromium_crystals_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Manganese:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Manganese_electrolytic_and_1cm3_cube.jpg/2880px-Manganese_electrolytic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Iron:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Iron_electrolytic_and_1cm3_cube.jpg/2880px-Iron_electrolytic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Cobalt:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kobalt_electrolytic_and_1cm3_cube.jpg/2880px-Kobalt_electrolytic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Nickel:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Nickel_electrolytic_and_1cm3_cube.jpg/2880px-Nickel_electrolytic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Copper:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Zinc:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Zinc_fragment_sublimed_and_1cm3_cube.jpg/2880px-Zinc_fragment_sublimed_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Gallium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/92/Gallium_crystals.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Germanium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/08/Polycrystalline-germanium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Arsenic:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Arsen_1a.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Selenium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/47/SeBlackRed.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Bromine:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bromine_vial_in_acrylic_cube.jpg/1920px-Bromine_vial_in_acrylic_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Krypton:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Krypton_discharge_tube.jpg/2880px-Krypton_discharge_tube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Rubidium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rb5.JPG/2560px-Rb5.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Strontium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Strontium_destilled_crystals.jpg/440px-Strontium_destilled_crystals.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Yttrium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Yttrium_sublimed_dendritic_and_1cm3_cube.jpg/2880px-Yttrium_sublimed_dendritic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Zirconium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Zirconium_crystal_bar_and_1cm3_cube.jpg/2560px-Zirconium_crystal_bar_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Molybdenum:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Molybdenum_crystaline_fragment_and_1cm3_cube.jpg/1920px-Molybdenum_crystaline_fragment_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Technetium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Technetium-sample-cropped.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Ruthenium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ruthenium_a_half_bar.jpg/1920px-Ruthenium_a_half_bar.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Rhodium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rhodium_78g_sample.jpg/1920px-Rhodium_78g_sample.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Palladium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d7/Palladium_%2846_Pd%29.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+
+.Silver:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Silver_crystal.jpg/1280px-Silver_crystal.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Cadmium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cadmium-crystal_bar.jpg/220px-Cadmium-crystal_bar.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Indium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indium.jpg/1280px-Indium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Tin:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sn-Alpha-Beta.jpg/1920px-Sn-Alpha-Beta.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Antimony:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Tellurium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Tellurium-89043.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Iodine:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sample_of_iodine.jpg/1920px-Sample_of_iodine.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Xenon:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Xenon_discharge_tube.jpg/1920px-Xenon_discharge_tube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Caesium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cesium.jpg/1280px-Cesium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Barium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/16/Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Hafnium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hf-crystal_bar.jpg/1920px-Hf-crystal_bar.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Tantalum:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Tantalum_single_crystal_and_1cm3_cube.jpg/1920px-Tantalum_single_crystal_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Tungsten:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Wolfram_evaporated_crystals_and_1cm3_cube.jpg/1920px-Wolfram_evaporated_crystals_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Rhenium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rhenium_single_crystal_bar_and_1cm3_cube.jpg/1920px-Rhenium_single_crystal_bar_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Osmium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Osmium_crystals.jpg/1920px-Osmium_crystals.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Iridium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Platinum:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Platinum_crystals.jpg/1920px-Platinum_crystals.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Gold:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Gold_nugget_%28Australia%29_4_%2816848647509%29.jpg/1920px-Gold_nugget_%28Australia%29_4_%2816848647509%29.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Mercury:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pouring_liquid_mercury_bionerd.jpg/1024px-Pouring_liquid_mercury_bionerd.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Thallium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Thallium_pieces_in_ampoule.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Lead:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lead_electrolytic_and_1cm3_cube.jpg/1920px-Lead_electrolytic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Bismuth:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Wismut_Kristall_und_1cm3_Wuerfel.jpg/1920px-Wismut_Kristall_und_1cm3_Wuerfel.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Polonium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/6/66/Polonium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Astatine:after {
+    background-image: url('data:image/jpeg;base64,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');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Radon:after {
+    background-image: url('https://theodoregray.com/periodictable/Samples/086.4/s12/01.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Francium:after {
+    background-image: url('https://static.wikia.nocookie.net/periodictableofelements/images/f/f3/Enhanced-buzz-12527-1366210293-8.jpg/revision/latest?cb=20150702162258');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Radium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bb/Radium226.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Rutherfordium:after {
+    background-image: url('https://periodictable.com/Samples/104.2/s7s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Dubnium:after {
+    background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUUFRYVFRYYGRgYGhkaGRwaGB4aGRgcGB0nHhwdGBwcIC4lHB4rHxwcJjgnLC8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHhISHzorJSY+MTU2PzE0NDQ2ND00NjQ2Njg0ND0xNDQxMTY0NDExNDE1NDQ0NDQ0NTQ0NDQ0ND40NP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABAYCBQcDAQj/xABCEAACAQICBQgJAgUDAwUAAAABAgADEQQhBQYSMVETFEFSYXGBkSIyMzRyc6Gx0UKSU2KCssEHFSMk0vAWVKLh8f/EABsBAQACAwEBAAAAAAAAAAAAAAADBAECBQYH/8QAKxEBAAIBAwQABQQDAQAAAAAAAAECEQMEMRIhQVEFExRhgSIycaFiwdEG/9oADAMBAAIRAxEAPwDlWNxjh3AZgAxsLyPz+r12840j7R/iMl6E0VzhmXb2NkXvs7V8+8QInP6vXbzjn9Xrt5zfnVRf/cL+0f8AfMa2qT2ulRX7LbN/G5EDRc/q9dvOOf1eu3nPOvRZGKsCrDIgzY0NEbeHavt22SRs7O+1um/bwgQuf1eu3nHP6vXbzkaIEnn9Xrt5xz+r1285GiBJ5/V67ecc/q9dvORogSuf1eu3nPnP6vXbzmGHos7BVBJJsABcknhJWlNF1MO+xVWzbIYZ3Fj29PCYzGcZ7jx5/V67ecc/q9dvORrTaY/QlaiiVHUhHAIIztfcG4G0TaImImeeBD5/V67ecc/q9dvORomRJ5/V67ecc/q9dvORp64eiXYKoJYmwAgenP6vXbzjn9Xrt5yTpnRnN2VS20WXaOVgMyLbzfdNeFvkMzA9+f1eu3nHP6vXbzm4paskKGq1Vpk7gbE9xuwzkTSuhHoANcMh3MvbuuOjvgQuf1eu3nHP6vXbznlRplmVRvYgDvJtLGdT3/ip5GBoef1eu3nMkx1QkDbbeOmbfF6rtTRnNRTsqWtY52mgp7x3iBcbREQKppH2j/EZvdSPaVPgH3mi0j7R/iM3upHtKnwD7wNDj/aVPjb+4zLA41qLBkJBG8XybsYdImOP9pU+Nv7jI8C2a00lelTxCi1wAe0MLi/ccvGZaIoNUwLoouzMwHms+6Sy0fTB6Qkx0RiTTwNRlyIZrHgTsi/he8COurSX2DiE2+qB9PWv9JptI6Peg+w47QRuI4iRSxvfp49N5a9MHlcFSqNmylc+k39E+drwKlERAREQOlf6c6JUIcQwuzEqv8qjIkdpN/KbHXzRQr4c1BYPSuwJsLr+pSfqO0dspmi9cq+HpJSVKZVL2uDfMkm9jxM96ut9TENTSsimmKiMyoDdgDutc3zzt02nHvtdz9V87xE/16bRMYwg6naKGIxCq9tlBtkG3pbJyW3TcnPsBnWcXhVqo1N1DKwsR2HhwPbKXrTrDR/4KmHsz03BDbBCqoUgoSbb7j0Zqz/qDiepT8m/7pruNHcbqa6lO2PEzx3IxHaVb0tgjQrVKR/QxF+I6D4ixkGTtLaQbEVWqsAC1rgZDIW6ZBnZpnpjq5x3akttDG4fDbK0Rt1GIBc52uRfP/A8TKlPXC+unxL95kb/AF29snyx/c0jaqYYPXBIyRS3iMh97+Ek67e2T5Y/uaNSj/yv8H+RA1uncUaldyTkrFV7ApsLeV/GbnVZuVpVqDZrbK/RtX3cMxeVvG+0qfG33MsOpA9Opw2R9/8A9gavV+htYimD+lix/oF/uJP03ha1fEOUpsVWyAjIeiM8zlvvIWi9ILQrs5UsPSAANiLnf5D6z1xesddmJVthehQB9SRnA1uKw9Smdl1ZT29PdxnjT3jvEuOjcRz2i9OoAWTcwHEGxHA3BlPQWYDtH3gXCIiBVNI+0f4jN7qR7Sp8A+80WkfaP8Rmej9IPQJamQCRY3F4EzGaHrs7kUmsWYjduJnpo/VyszDbXYXpJIvbsAN7zH/1Niesv7RPDEacxDixqEDgtl+2cDZa145SUoIRsp61t1wLAeAv5yXoTCmrgnQHNma3eNkj6iU8ydR0nUSmaamyk7WW8G4NwejcIGI0dVL7HJttXtbZP34ds32sLCjh6WHuC2Rbstv8yfpII1oxGzs7S9+zn+PpNRXrM7FmJZjmSczA8jERAREQEu/+nmhttziGHoobJfpfj4A+Z7JSJv8AQ2tOIwyhEKsgvZWW4Fzc2IIP1kG6pqX0prp8yzGPLp+sGiVxNBqZsG9ZT1WG4/4PYTOLVqTKxVgQQSCDvBG8S3V/9QcQRZUpr22Zj4Xa3neVTFYlqjs7naZjck9J8JW+H6Gvo1mupjHgtMTPZHiInQYJ64X10+JfvPKZo9iCN4II8IFh129snyx/c0hatYoU66lslYFCeG1u+oEi6R0g9dgz2JAsLC2V7/5kKButYNGvTqu1iVdiykC49I3Iy3WP+JtNB0jhqFWtUBUsPRByJsPRyPEn6TV4TWSvTAUMCALDaFyB3giQ9I6UqVyNs5DcBkoPG3GBM1dw1KrUKVQSSLrmRcjeMun8SJpHRr0nKFWtc7JsSGXoI8JCRyCCCQRuI3ibujrRiFFiVbtZc/GxF4Gz0FROFo1K1S6lrbKnIm3qi3QSTKmhuw7x95J0jpKpXILte24DJR3D/Mi0947xAuMRECqaR9o/xGRpJ0j7R/iMjQEREBERAT3XCuRcI5B3EKbH6TwnbtVB/wBHh/lrA4xzSp1H/afxHNKnUf8AafxO/wBotA4BzSp1H/afxHNKn8N/2n8Tv9otA4DzSp/Df9p/E+c0qdR/2n8Tv9p8BF7ZXg4cC5pU/hv+0/iOaVP4b/tP4ne6tRUUs5CqN5JsBPOhiqb+o6N8LA/aGJmI7OD80qfw3/afxHNKnUf9p/E7/aLQy4BzSp1H/afxHNKnUf8AafxO/wBotA4BzSp1H/afxPN0INiCCN4IsRP0HacT1w99xHzD9hA0s9aAG0NoEi+YG89gnlPbDVmRgy2uuYuAfoYG1GCp5kgAgIGQuQFZicr2vewGXQTnungcMgWoCrDY2gWJ/UD6KgDI7s/E9EjjHuCTZM7XGwuybZg2ta/bD492XZbZI9LMqpYFjckG17kwIczpbx3iHe5Jyz4Cw8hFLeO8QLjERAqmkfaP8RkaSdI+0f4jI0BERAREQE7fqp7nhvlrOITt+qnueG+WsDcRE861VUUs5AVRck5AAQcRmWU0usmmXw4QIgJe/pNfZFuiwIJJ75XqutOILsVKhScl2Rkt91+Nv/BGkNY3qkqaaGnfJHBJ7yQRY926YVb7is1mKziUXG6dxFVdhnAW97INm/YSDmOya5HZWDqxDD9QPpecE3Jytn25edzaT2pYZUN6ju9sgqbKg97DMXjupdVpnvL7jdMVK1Jabm+y21tXsWAByYDI5537JrwbEMMiDcEZEHsMxn20wxN5mc5WPQGsTIxSu7MrW2WOZVibWPSQb+Eu055oXSlOiDt0Fdgbo4A2geBJ+lp76T1lqu55NthAfRsBtN2te/l95suaetFa95yvkTU6F0wlZEDOvKWG0p9Fiw37KneO6baFqtotGYYzimuPvuI+YfsJ2ucU1x99xHzD9hDZpYiICIiAmdLeO8TCZ0t47xAuMRECqaR9o/xGRpJ0j7R/iMjQEREBERATt+qnueG+Ws4hO36qe54b5awNxKVrniXNRaZJCBQ1uhiSczxtaXOanT2hRiQpDlXQMFyupBtkw37wPrCLWra1ZiHPp9QDO+4C/f2X6J64rDGm7I1iymx2TcXtfpA4zyHblfI9nbNLcOXiYnDNXA3ohHD0vuGvPdEpNltGm3813Q/1AXXxBnglJmOyBduH+SdwHbunsKiU/Vs79LEXRfgU+sf5jlwHTIb+omc/b/ben+XDKto50zcKi9DFgVbhsbNy3gO+08G2RkNpu02UeCi5+smDEV6edRWZH3rUDbD+J3HtExq4RWU1KNyozdDm6duXrL2iaV1LZ/XPb3HH5b2pEx+mPxPKCWHVHgW/ySJ9dLHsIuO4/wDlvCKVMsbAZnyAG8k9AAzioRfLcLAcbD87/GTxziEPhK0TiVp1UdkL2IsNq1iTba3G9uGU6ZacnBtLZqdXrM9QszMmVyxJ9PsJ6bb/AAkkLW21MT045WucU1x99xHzD9hO2GcT1x99xHzD9hMr7SxEQEREBM6W8d4mEzpbx3iBcYiIFU0j7R/iMjSTpH2j/EZGgIiICIiAnb9VPc8N8tZxCdv1U9zw3y1gbiV7TmsYosURQ7gelc2VD0A8T2ZTe1aqoCzsFUbyTYC/bOW1nLMxLbRLG7dbPf4zEq+41JpERHlLx2kjWuXRNs2s6hlYAdBF7N48ZCRCTYZk7pjPRBkx7h3Bt5+lv6praeznTaZnMpRqKy8mptu9I5cpbcrH9IB9W/AX7MdHsqV6fKCwVxtXHq947DYyKBJWHblCEYMW3K6i7rwDD9a/USC9MVmPE5z77pK2zMe4W7WDE0+buCynaFkFwSW6CO7fKjgaVQttU/RKZlibKg4u263Z0yQ+jEojarNfMgLTzLEdZ9y92+R8VjmcbAASmNyLkve3Sx7TKu10eik105zE8zKfW1JtaLW7THiHvjqiMp5GwFxyuRG1wZQTkm1fLja/RPPR/IsVSouzfavU2ytsrj0T6PRbxkOm+ybjo39o6QfC8+MtiQOgy7pV6OyvN8zmYbjQ+jaWIrum22wouu4O/wD9C/2l4weFSkiogsqiw/J7ZzGlUZWDoSrKbgjeDLzqrja1ZHaoQwDAK1gCcs7237xnJlnbWrnGO7dzimuPvuI+YfsJ2ucU1x99xHzD9hMrrSxEQEREBM6W8d4mEzpbx3iBcYiIFU0j7R/iMjSTpH2j/EZGgIiICIiAnb9VPc8N8tZxCdv1U9zw3y1ge+m8AcRSZFIDGxW+66m9j2SmPq7iQdnk79O0GXZ8yb/SdClM1n06tUcjTzS4LPfJrdCjpF+nsmJVtxWmMzy0+PoUkFMI5dypNSxBRWysEIA/m49EiK9vHI8COBHSJjPbC1FR0dl2gpuRxtu+sx2nlQmYmfQoIXb2AVvbaIYrfhe9pkcY9tkNsr1UAQHv2d/jPTEaZrVVKO/ok3ICgWtuGQ9W88MBT5WolNR6xzPADMnyBmuppxWJtMcZmfw2xOcQkNReiqPfZFRb2tdSB0MpyOVj4zxNRG3qVP8AKfRP9LbvBpcdY8FtUPRGaWZe4ZEeX2lFJuRs53yAGZlXZakbmueJzPH9JtfSnTt0/aHqVXix/pAv/wDI2+s+M1yTxmNrZdPTx8eE+i8uRXE8q0pOJwbU0puxFqgJFs7W4nuMuequj3pU2L5bbbQTqi2/LpOXkJSBXcIUv6BN7EA2PFeHhLfqhpF6iGmwuKYUK/EZgKe0WmYWdvNetY5xTXH33EfMP2E7XOKa4++4j5h+wmXQaWIiAiIgJnS3jvEwmdLeO8QLjERAqmkfaP8AEZGknSPtH+IyNAREQEREBO36qe54b5aziE7fqp7nhvlrA25UHI7jkZTX1OcEhaq7I9W6m/YDY/X6S5xDS+lW/MOb47QlekSCjMOhkG0D5ZjxE+YLQ9eo4QIy8WdSqjxO/wALzo8TGEE7WueeyiaW1TenT20bbIF3W1u8pxA4b56akYPN6x6LIvjmx+w85ZNY8ZyWHcj1mGwnHafLLuFz4THRGD5GiidIF2+I5n6mU/iu6mm16PNpx+IT6GjX5uY4hNZQQQc75Sk6E0cEx+wd1Ms47Rb0f7h5S7TSaXApYihiei/Jv3PuPgf8Tl/Btx0a06c8Wj+/Cfd0zEW9NjpPQdGvcsoVz+tcmvxPQ3jNMNT/AE1/5Lplt5WYn+Xosfp2y2Xnyehwr20aW7zCuYXVJFqFncugzVCLfvN/SHgO2WNUAFgABwAsImUM1pWvEMZxTXH33EfMP2E7XOKa4e+4j5h+whu0sREBERATOlvHeJhM6W8d4gXGIiBVNI+0f4jI0k6R9o/xGRoCIiAiIgJ0rV7W1aVCnTemx2FCgqQbgcQbWM5tN7hfVHcJPoUi84lDrWmsRMLomup5S5p2p7rA3fvvu8PrNo+t2GC3BcnqhDfzOX1nO4lqdvSVaNa0LpQ11u526dkO7ZN2Hab5Hw+s2j614UC4dmPQApv9Rac3iYnb0kjWtHlbcNjnx2JQsNmnS9MLvzG4sekk28jLdK/qdhNmiXIzqG/9K5D/ACfGWCeK+Ma8am4mteK9odXa1xTqnmSRdJ4QVqT0z+oG3Y3QfO0lz5Obp3mlotHhYtWLRMT5VbRmtwRQldG2k9HaWxJtl6QJGcx0jrmSLUEI/mexPgo/M1OtWC5OuSB6L+kO/wDV9c/GaWfQdtGnr6ddWI5jP/XEve9JmueF4weulMj/AJUdW/kswPdci0i6U1yZgVoKUv8AraxbwXMeJlRiTxoUictPnWxjK44fXYhLPSu4G9Wsp7d1x9ZzzTeKNWvUqMACzXIG4TZzSY31z3yHcadaREx5T6F5tOJR4iJUWSIiAmdLeO8TCZ0t47xAuMRECqaR9o/xGRpJ0j7R/iMjQEREBERATe4X1R3CaKb3C+ovdLO1/dKvuP2w9YiJfUgz2wuHNR0Rd7sAOzifAXPhPKWXUvB7TtVO5Bsr8Tb/ACH3lTfbiNDQtqefH8pdKnVeIXOlTCqqrkFAA7hMoifObTMzmXfiIiMQRETUaLW7BbdDbA9Kmdr+nc30z8JQp1l0DAg7iCD2gzl2PwppVHQ/pYgdo6D5T1//AJ/c9VJ0Z5jvH8Ty5e+0+m0WjyjRET0jnvs0eN9du+bwTR431275U3XELW35l4RESktkREBM6W8d4mEzpbx3iBcYiIFU0j7R/iMjSTpH2j/EZGgIiICIiAmywOLUCzZW3Ga2JvS81nMNbVi0YlYBUU9I845ReI85oLxeTxuZ9IPpo9t/yo4jznQtX3pUaCKaibRG03pr6zePQLDwnH7xeUt9Sd3SKTOIj15TaNI0rZju7mMfS/iJ+9fzJCsCLjMTgc3GgtP1cKwKklL+khPokdOXQe0Ti6nwbFc0tmfvC1Gv7h2WeFTFU1NmdAeBYA/Uyia461E7NKg5ClVZmB9I3FwoI3ZEE98oxa+Zke3+EzevVe2M+MM21oiezuX+4Uf4qfvX8yoa5LTLpVR0NxstZgd2YOR75zqfQZ0tnsI2urGpW0z9kOrb5lcTDfcovEeccovEec0F4vO19VPpU+mj23NbFqBvueAmodrkmYz5INTVm/KWmnFOCIiRpCIiAmdLeO8TCZ0t47xAuMRECqaR9o/xGRpJ0j7R/iMjQEREBERAREQPbC4c1HVFtdiAL7s+M2H+ym+zy1DauRblLG4ytmu+88dBe8UfjWeGkT/y1Pjf+4wMK9BkZlYWZTYgzxtLVUpK1WltgMThdpgRfMIbE9v4mo0ZSVkxBYAlad1uNx2gLjhAjYnBsgQkj012xY7geN+mRbSx6QxgRMOOTRiaS3LrtZXyAB3dOe+ZrhKS1WbYBRsPyoU/pJsbDhmD5wK0Z7YjD7JA2la6hvRN7X6DwPZNmaq1qNVjTpq1PYKlF2cmJBBtv8ZLOFTlVGwtual7WFtrZJv39sCtT7abLRtJTTxBKglUUqSMwSwFxJ9eutLm4WjTYtTRmLKG2rm2V9xyOe+BXbRLSBTGJbDilT2LsLkXe+ztXDbxwAErDixIgYxEQEREBERATOlvHeJhM6W8d4gXGIiBVNI+0f4jI0maQQmo9gfWPRI3JngfKBhEz5M8D5RyZ4HygYRM+TPA+UcmeB8oGETPkzwPlHJngfKB64DEcnUR7X2WBtxtNg+kaBYtze5JLZ1Da5zNxbdfomq5M8D5RyZ4HygbClpZxX5ZgGJuCu4bJFtkcBYz1OkqSpUSnSIDrYlm2iMwRbosM/OarkzwPlHJngfKBtDpKky00qUieTUKCG2SeIOW6YHSxL1HKj0qZpqoOSLkABxAtNdyZ4HyjkzwPlAkYfF7NOqlr8ps533bJv475MGmLVEfZyWmKbKT6wsQc+jfNXyZ4HyjkzwPlA2h0lSVKiU6ZUVFAJZrnI3HRu/Mi4vG7ZpG1uTRU379kk37N8i8meB8o5M8D5QNh/un/UGvs9JOzfitt81zG5M+8meB8o5M8D5QMImfJngfKOTPA+UDCJnyZ4HyjkzwPlAwiZ8meB8o5M8D5QMJnS3jvEcmeB8plTQ3GR3jogW+IiAG7xiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIERAlxEQP/Z');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Seaborgium:after {
+    background-image: url('https://periodictable.com/Samples/106.4/s7s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Bohrium:after {
+    background-image: url('https://periodictable.com/Samples/107.2/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Hassium:after {
+    background-image: url('https://periodictable.com/Samples/108.2/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Meitnerium:after {
+    background-image: url('https://periodictable.com/Samples/109.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Darmstadtium:after {
+    background-image: url('https://periodictable.com/Samples/110.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Roentgenium:after {
+    background-image: url('https://periodictable.com/Samples/111.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Copernicium:after {
+    background-image: url('https://periodictable.com/Samples/112.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Nihonium:after {
+    background-image: url('https://periodictable.com/Samples/113.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Flerovium:after {
+    background-image: url('https://periodictable.com/Samples/114.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Moscovium:after {
+    background-image: url('https://periodictable.com/Samples/115.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Livermorium:after {
+    background-image: url('https://periodictable.com/Samples/116.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Tennessine:after {
+    background-image: url('https://periodictable.com/Samples/117.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Oganesson:after {
+    background-image: url('https://periodictable.com/Samples/118.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Lanthanum:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8c/Lanthanum-2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Cerium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Praseodymium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Neodymium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/ba/Neodymium2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Promethium:after {
+    background-image: url('https://periodictable.com/Samples/061.1/s9s.JPG');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Samarium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Europium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Gadolinium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d1/Gadolinium-4.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Terbium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Dysprosium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a8/Dy_chips.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Holmium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Erbium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/12/Erbium-crop.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Thulium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Thulium_sublimed_dendritic_and_1cm3_cube.jpg/1920px-Thulium_sublimed_dendritic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Ytterbium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Lutetium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Lutetium_sublimed_dendritic_and_1cm3_cube.jpg/1920px-Lutetium_sublimed_dendritic_and_1cm3_cube.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Actinium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Actinium_sample_%2831481701837%29.png/800px-Actinium_sample_%2831481701837%29.png');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Thorium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/13/Thorium_sample_0.1g.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Protactinium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Protactinium-233.jpg/1280px-Protactinium-233.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Uranium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/HEUraniumC.jpg/1280px-HEUraniumC.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Neptunium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/03/Np_sphere.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Plutonium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/13/Partially-reflected-plutonium-sphere.jpeg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Americium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/Americium_microscope.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Curium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/6/69/Curium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Berkelium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b6/Berkelium_metal.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Californium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Einsteinium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/55/Einsteinium.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Fermium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Fermium-Ytterbium_Alloy.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Mendelevium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/DIMendeleevCab.jpg/800px-DIMendeleevCab.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Nobelium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/AlfredNobel2.jpg/800px-AlfredNobel2.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
+.Lawrencium:after {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/Ernest_Lawrence.jpg');
+    background-size: 160px 110px;
+    background-position: top;
+    background-repeat:no-repeat;
+  
+}
+
